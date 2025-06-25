@@ -37,6 +37,32 @@ header {
   z-index: 2;
 }
 
+/* Logo styling */
+.logo-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 20px;
+  padding-bottom: 10px;
+  animation: bounceLogo 4s ease-in-out infinite;
+}
+
+.logo {
+  height: 60px;
+  width: auto;
+  transition: transform 0.3s ease;
+  filter: drop-shadow(0 0 4px rgba(255, 102, 178, 0.5));
+}
+
+.logo:hover {
+  transform: scale(1.1) rotate(-5deg);
+}
+
+@keyframes bounceLogo {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
 nav a {
   color: #555;
   margin-right: 20px;
@@ -201,6 +227,11 @@ footer {
   h2 {
     font-size: 1.6rem;
   }
+  .logo-container {
+    justify-content: flex-end;
+    padding-left: 0;
+    padding-right: 20px;
+  }
 }
 
 /* Bubble animations */
@@ -300,6 +331,3 @@ footer {
     transform: translateY(-10px);
   }
 }
-
-
-
