@@ -5,79 +5,128 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Cakes Dat Rock</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Sidebar Navigation */
+    #sidebar {
+      position: fixed;
+      top: 100px;
+      left: 10px;
+      width: 150px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 20px;
+      font-weight: 600;
+      font-family: 'Poppins', sans-serif;
+      z-index: 1100;
+    }
+    #sidebar a {
+      display: block;
+      margin-bottom: 12px;
+      color: #333;
+      text-decoration: none;
+      padding: 5px 10px;
+      border-radius: 8px;
+      transition: background 0.3s, color 0.3s;
+    }
+    #sidebar a.active, #sidebar a:hover {
+      background: #ff66b2; /* pink */
+      color: white;
+    }
+
+    /* Adjust content container margin */
+    .container {
+      margin-left: 180px;
+      max-width: 900px;
+    }
+
+    /* Hide French by default */
+    .fr {
+      display: none;
+    }
+    .lang-switch {
+      cursor: pointer;
+      user-select: none;
+      background: #ff66b2;
+      color: white;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1200;
+      box-shadow: 0 4px 10px rgba(255, 102, 178, 0.6);
+      transition: background 0.3s ease;
+    }
+    .lang-switch:hover {
+      background: #e0559c;
+    }
+  </style>
 </head>
 <body>
+  <!-- Language Toggle Button -->
+  <div class="lang-switch" id="lang-toggle">FR 🇫🇷</div>
+
+  <!-- Sidebar Navigation -->
+  <nav id="sidebar">
+    <a href="#about" class="nav-link active" data-section="about">About / À propos</a>
+    <a href="#menu" class="nav-link" data-section="menu">Menu</a>
+    <a href="#order" class="nav-link" data-section="order">Order / Commander</a>
+    <a href="#training" class="nav-link" data-section="training">Training / Formation</a>
+    <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+  </nav>
+
   <header>
     <div class="container">
       <img src="logo.png" alt="Cakes Dat Rock Logo" class="logo" />
-      <nav>
-        <a href="#about">About</a>
-        <a href="#menu">Menu</a>
-        <a href="#order">Order</a>
-        <a href="#training">Training</a>
-        <a href="#contact">Contact</a>
-        <a href="#" class="lang-switch">FR 🇫🇷</a>
+      <nav class="top-nav">
+        <a href="#about" class="nav-link" data-section="about">About</a>
+        <a href="#menu" class="nav-link" data-section="menu">Menu</a>
+        <a href="#order" class="nav-link" data-section="order">Order</a>
+        <a href="#training" class="nav-link" data-section="training">Training</a>
+        <a href="#contact" class="nav-link" data-section="contact">Contact</a>
       </nav>
     </div>
   </header>
 
-  <section class="hero">
-    <div class="container">
+  <!-- Hero Section -->
+  <section class="hero container">
+    <!-- English -->
+    <div class="en">
       <h1>Cakes Dat Rock</h1>
       <p>Delicious cakes & finger foods — Abuja, soon in Canada!</p>
       <a href="#order" class="btn">Order Now</a>
     </div>
-  </section>
-
-  <section id="about">
-    <div class="container">
-      <h2>About Us</h2>
-      <p>Cakes Dat Rock is your go-to bakery for freshly made cakes, pastries, and finger foods like samosas, spring rolls, puff-puff, and meat pies. We also offer in-person training in Abuja and Canada for aspiring bakers!</p>
+    <!-- French -->
+    <div class="fr">
+      <h1>Cakes Dat Rock</h1>
+      <p>Délicieux gâteaux & amuse-gueules — Abuja, bientôt au Canada!</p>
+      <a href="#order" class="btn">Commander Maintenant</a>
     </div>
   </section>
 
-  <section id="menu">
-    <div class="container">
-      <h2>Our Menu</h2>
-      <ul class="menu-list">
-        <li><strong>Cakes</strong> – Birthday, wedding & custom cakes</li>
-        <li><strong>Samosas & Spring Rolls</strong></li>
-        <li><strong>Puff-Puff & Meat Pies</strong></li>
-        <li><strong>Special orders & party trays available</strong></li>
-      </ul>
-    </div>
+  <!-- About Section -->
+  <section id="about" class="container">
+    <h2 class="en">About Us</h2>
+    <h2 class="fr">À propos</h2>
+    <p class="en">Cakes Dat Rock is your go-to bakery for freshly made cakes, pastries, and finger foods like samosas, spring rolls, puff-puff, and meat pies. We also offer in-person training in Abuja and Canada for aspiring bakers!</p>
+    <p class="fr">Cakes Dat Rock est votre boulangerie de référence pour des gâteaux frais, pâtisseries et amuse-gueules comme samoussas, rouleaux de printemps, puff-puff et pâtés à la viande. Nous offrons également une formation en personne à Abuja et au Canada pour les boulangers en herbe!</p>
   </section>
 
-  <section id="order">
-    <div class="container">
-      <h2>Place an Order</h2>
-      <p>Order online, via WhatsApp, social media, or by phone:</p>
-      <a href="https://wa.me/15065885710" class="btn" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-      <a href="tel:+15065885710" class="btn">Call Us</a>
-      <a href="https://instagram.com/YOUR_INSTAGRAM" class="btn" target="_blank" rel="noopener noreferrer">Instagram</a>
-    </div>
-  </section>
-
-  <section id="training">
-    <div class="container">
-      <h2>Training Programs</h2>
-      <p>We offer in-person baking and small chops training in Abuja and Canada. Contact us to learn more or register!</p>
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="container">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:info@cakesdatrock.com">info@cakesdatrock.com</a></p>
-      <p>Phone: +1 506 588 5710 (Canada) | +234 XXX XXX XXXX (Nigeria)</p>
-      <p>Locations: Abuja, NG & Moncton/Dieppe, CA (coming soon!)</p>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 Cakes Dat Rock. All rights reserved.</p>
-    </div>
-  </footer>
-</body>
-</html>
+  <!-- Menu Section -->
+  <section id="menu" class="container">
+    <h2 class="en">Our Menu</h2>
+    <h2 class="fr">Notre Menu</h2>
+    <ul class="menu-list en">
+      <li><strong>Cakes</strong> – Birthday, wedding & custom cakes</li>
+      <li><strong>Samosas & Spring Rolls</strong></li>
+      <li><strong>Puff-Puff & Meat Pies</strong></li>
+      <li><strong>Special orders & party trays available</strong></li>
+    </ul>
+    <ul class="menu-list fr">
+      <li><strong>Gâteaux</strong> – Gâteaux d'anniversaire, mariage & personnalisés</li>
+      <li><strong>Samoussas & Rouleaux de printemps</strong></li>
+      <li><strong>Puff-Puff & Pâtés à la viande</strong></li>
+      <li><strong>C
