@@ -8,6 +8,21 @@
 </head>
 <body>
 
+  <div id="device-popup" class="popup hidden">
+  <div class="popup-box">
+    <h2>Are you on a phone or computer?</h2>
+    <div class="popup-options">
+      <div class="popup-option" onclick="selectDevice('phone')" onmouseover="hoverReact(this)">
+        <span class="emoji">📱</span><br>Phone
+      </div>
+      <div class="popup-option" onclick="selectDevice('computer')" onmouseover="hoverReact(this)">
+        <span class="emoji">🖥️</span><br>Computer
+      </div>
+    </div>
+  </div>
+</div>
+
+
   <div class="bubble" style="width: 50px; height: 50px; left: 10%; background: #ff66b2; animation-duration: 20s; animation-delay: 0s;"></div>
 <div class="bubble" style="width: 30px; height: 30px; left: 25%; background: #66ffb3; animation-duration: 18s; animation-delay: 5s;"></div>
 <div class="bubble" style="width: 40px; height: 40px; left: 40%; background: #ffb366; animation-duration: 22s; animation-delay: 3s;"></div>
