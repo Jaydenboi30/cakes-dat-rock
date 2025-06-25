@@ -1,0 +1,126 @@
+/* Reset + Base Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: #fff;
+  color: #333;
+}
+
+/* Layout Container */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px 0;
+}
+
+/* Header */
+header {
+  background: linear-gradient(to right, #ff66b2, #ff9966); /* pink to orange */
+  color: #fff;
+  padding: 20px 0;
+}
+
+.logo {
+  height: 50px;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #e0f7fa;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(to right, #009688, #7e57c2); /* teal to purple */
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-block;
+  background: #4caf50; /* green */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #388e3c;
+}
+
+/* Sections */
+section {
+  padding: 50px 20px;
+  border-bottom: 1px solid #eee;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #ff66b2;
+}
+
+/* Menu List */
+.menu-list {
+  list-style: none;
+  padding-left: 20px;
+}
+
+.menu-list li {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+/* Contact Section */
+#contact p {
+  margin-bottom: 10px;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.9rem;
+}
+
+.lang-switch {
+  background: #fff;
+  color: #ff66b2;
+  padding: 5px 10px;
+  border-radius: 15px;
+}
