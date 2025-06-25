@@ -13,6 +13,8 @@ body {
   line-height: 1.6;
   min-height: 100vh;
   padding: 20px 0;
+  position: relative;
+  overflow-x: hidden;
 }
 
 /* Container */
@@ -20,6 +22,8 @@ body {
   max-width: 960px;
   margin: 0 auto;
   padding: 0 20px;
+  position: relative;
+  z-index: 1; /* make sure content is above bubbles */
 }
 
 /* Header and Nav */
@@ -29,6 +33,8 @@ header {
   box-shadow: 0 4px 12px rgba(255, 102, 178, 0.3);
   border-radius: 12px;
   margin-bottom: 30px;
+  position: relative;
+  z-index: 2;
 }
 
 nav a {
@@ -176,6 +182,8 @@ footer {
   font-size: 0.9rem;
   color: #aaa;
   user-select: none;
+  position: relative;
+  z-index: 2;
 }
 
 /* Responsive */
@@ -194,3 +202,31 @@ footer {
     font-size: 1.6rem;
   }
 }
+
+/* Bubble animations */
+.bubble {
+  position: fixed;
+  bottom: -100px;
+  border-radius: 50%;
+  opacity: 0.6;
+  animation-name: bubbleRise;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes bubbleRise {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.6;
+  }
+  80% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateY(-110vh) scale(1.2);
+    opacity: 0;
+  }
+}
+
