@@ -281,4 +281,25 @@ footer {
   transition: transform 0.3s ease;
 }
 
+/* Footer emoji decoration */
+.footer-emojis {
+  text-align: center;
+  font-size: 2rem;
+  padding: 15px 0 40px;
+  color: #ff66b2;
+  user-select: none;
+  filter: drop-shadow(0 0 2px #fbc8b8);
+  animation: floatUpDown 6s ease-in-out infinite;
+}
+
+@keyframes floatUpDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+
 
