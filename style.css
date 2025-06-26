@@ -397,7 +397,31 @@ footer {
   box-shadow: 0 20px 40px rgba(255, 102, 178, 0.5);
 }
 
-/* Responsive: stack images vertically on smaller screens */
+/* ===== Floating Video ===== */
+
+.floating-video {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+.float-video {
+  width: 90%;
+  max-width: 640px;
+  border-radius: 20px;
+  box-shadow: 0 12px 28px rgba(255, 179, 102, 0.4);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: floatUpDown 7s ease-in-out infinite;
+  outline: none;
+}
+
+.float-video:hover {
+  transform: scale(1.03);
+  box-shadow: 0 18px 40px rgba(255, 179, 102, 0.6);
+}
+
 @media (max-width: 700px) {
   .floating-images {
     flex-direction: column;
@@ -409,4 +433,10 @@ footer {
     max-height: 250px;
     float: none;
   }
+
+  .float-video {
+    width: 100%;
+    max-width: 100%;
+  }
 }
+
