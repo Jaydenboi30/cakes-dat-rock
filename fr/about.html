@@ -6,6 +6,7 @@
   <title>À propos - Cakes Dat Rock</title>
   <link rel="stylesheet" href="../style.css" />
 </head>
+
 <script>
   function detectDevice() {
     const isMobile = /iPhone|Android|iPad|iPod/i.test(navigator.userAgent);
@@ -59,14 +60,14 @@
   <div class="bubble" style="width: 45px; height: 45px; left: 85%; background: #ff6699; animation-duration: 21s; animation-delay: 6s;"></div>
 
   <div class="logo-container">
-    <a href="../index.html">
+    <a href="index.html">
       <img src="../logo.png" alt="Cakes Dat Rock Logo" class="logo" />
     </a>
   </div>
 
   <header>
     <nav class="container">
-      <a href="../index.html">Accueil</a>
+      <a href="index.html">Accueil</a>
       <a href="about.html" class="active">À propos</a>
       <a href="menu.html">Menu</a>
       <a href="order.html">Commander</a>
@@ -80,8 +81,14 @@
     <h1>À propos de Cakes Dat Rock</h1>
     <p>Bienvenue chez Cakes Dat Rock ! Nous sommes spécialisés dans les pâtisseries nigérianes et les amuse-gueules qui apportent de la joie à chaque occasion.</p>
 
-    <div class="floating-images">
+    <div class="floating-media">
       <img src="../images/bakery-left.jpg" alt="Intérieur de la boulangerie" class="float-img left" />
+
+      <video class="float-video" controls muted loop>
+        <source src="../videos/icing-cake.mp4" type="video/mp4" />
+        Votre navigateur ne supporte pas la vidéo.
+      </video>
+
       <img src="../images/bakery-right.jpg" alt="Gâteaux fraîchement cuits" class="float-img right" />
     </div>
 
@@ -95,6 +102,5 @@
   <footer class="container">
     <p>&copy; 2025 Cakes Dat Rock</p>
   </footer>
-
 </body>
 </html>
