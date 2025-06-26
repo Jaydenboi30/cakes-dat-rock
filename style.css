@@ -362,3 +362,51 @@ footer {
     margin: 0 auto;
   }
 }
+
+/* ===== Floating Images for About Page ===== */
+
+.floating-images {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem 0 3rem;
+  gap: 1rem;
+}
+
+.float-img {
+  width: 48%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(255, 102, 178, 0.25);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: floatUpDown 6s ease-in-out infinite;
+  cursor: default;
+}
+
+.float-img.left {
+  float: left;
+}
+
+.float-img.right {
+  float: right;
+}
+
+.float-img:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(255, 102, 178, 0.5);
+}
+
+/* Responsive: stack images vertically on smaller screens */
+@media (max-width: 700px) {
+  .floating-images {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .float-img {
+    width: 100%;
+    max-height: 250px;
+    float: none;
+  }
+}
