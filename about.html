@@ -6,6 +6,7 @@
   <title>About - Cakes Dat Rock</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <script>
   function detectDevice() {
     const isMobile = /iPhone|Android|iPad|iPod/i.test(navigator.userAgent);
@@ -80,8 +81,14 @@
     <h1>About Cakes Dat Rock</h1>
     <p>Welcome to Cakes Dat Rock! We specialize in delicious Nigerian baked goods and finger foods that bring joy to every occasion.</p>
 
-    <div class="floating-images">
+    <div class="floating-media">
       <img src="images/bakery-left.jpg" alt="Bakery interior" class="float-img left" />
+
+      <video class="float-video" controls muted loop>
+        <source src="videos/icing-cake.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
       <img src="images/bakery-right.jpg" alt="Freshly baked cakes" class="float-img right" />
     </div>
 
@@ -95,6 +102,5 @@
   <footer class="container">
     <p>&copy; 2025 Cakes Dat Rock</p>
   </footer>
-
 </body>
 </html>
