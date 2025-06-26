@@ -5,39 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>À propos - Cakes Dat Rock</title>
   <link rel="stylesheet" href="../style.css" />
-  <script>
-    function detectDevice() {
-      const isMobile = /iPhone|Android|iPad|iPod/i.test(navigator.userAgent);
-      if (!localStorage.getItem("deviceChoice")) {
-        if (!isMobile && !navigator.userAgent.includes("Windows") && !navigator.userAgent.includes("Mac")) {
-          document.getElementById("device-popup").classList.remove("hidden");
-        } else {
-          localStorage.setItem("deviceChoice", isMobile ? "phone" : "computer");
-        }
-      }
-    }
-
-    function selectDevice(type) {
-      localStorage.setItem("deviceChoice", type);
-      document.getElementById("device-popup").classList.add("hidden");
-    }
-
-    function hoverReact(el) {
-      if (!/Mobi|Android/i.test(navigator.userAgent)) {
-        el.querySelector('.emoji').style.transform = "scale(1.3)";
-        setTimeout(() => {
-          el.querySelector('.emoji').style.transform = "scale(1)";
-        }, 300);
-      }
-    }
-
-    document.addEventListener("DOMContentLoaded", detectDevice);
-  </script>
 </head>
+<script>
+  function detectDevice() {
+    const isMobile = /iPhone|Android|iPad|iPod/i.test(navigator.userAgent);
+    if (!localStorage.getItem("deviceChoice")) {
+      if (!isMobile && !navigator.userAgent.includes("Windows") && !navigator.userAgent.includes("Mac")) {
+        document.getElementById("device-popup").classList.remove("hidden");
+      } else {
+        localStorage.setItem("deviceChoice", isMobile ? "phone" : "computer");
+      }
+    }
+  }
+
+  function selectDevice(type) {
+    localStorage.setItem("deviceChoice", type);
+    document.getElementById("device-popup").classList.add("hidden");
+  }
+
+  function hoverReact(el) {
+    if (!/Mobi|Android/i.test(navigator.userAgent)) {
+      el.querySelector('.emoji').style.transform = "scale(1.3)";
+      setTimeout(() => {
+        el.querySelector('.emoji').style.transform = "scale(1)";
+      }, 300);
+    }
+  }
+
+  detectDevice();
+</script>
 
 <body>
 
-  <!-- Device Popup -->
   <div id="device-popup" class="popup hidden">
     <div class="popup-box">
       <h2>Êtes-vous sur un téléphone ou un ordinateur ?</h2>
@@ -52,25 +51,22 @@
     </div>
   </div>
 
-  <!-- Bubbles -->
-  <div class="bubble" style="width: 50px; height: 50px; left: 10%; background: #ff66b2; animation-duration: 20s;"></div>
+  <div class="bubble" style="width: 50px; height: 50px; left: 10%; background: #ff66b2; animation-duration: 20s; animation-delay: 0s;"></div>
   <div class="bubble" style="width: 30px; height: 30px; left: 25%; background: #66ffb3; animation-duration: 18s; animation-delay: 5s;"></div>
   <div class="bubble" style="width: 40px; height: 40px; left: 40%; background: #ffb366; animation-duration: 22s; animation-delay: 3s;"></div>
   <div class="bubble" style="width: 35px; height: 35px; left: 60%; background: #66b3ff; animation-duration: 25s; animation-delay: 7s;"></div>
   <div class="bubble" style="width: 25px; height: 25px; left: 75%; background: #b366ff; animation-duration: 19s; animation-delay: 2s;"></div>
   <div class="bubble" style="width: 45px; height: 45px; left: 85%; background: #ff6699; animation-duration: 21s; animation-delay: 6s;"></div>
 
-  <!-- Logo -->
   <div class="logo-container">
-    <a href="index.html">
-      <img src="logo.png" alt="Logo Cakes Dat Rock" class="logo" />
+    <a href="../index.html">
+      <img src="../logo.png" alt="Cakes Dat Rock Logo" class="logo" />
     </a>
   </div>
 
-  <!-- Header and Navigation -->
   <header>
     <nav class="container">
-      <a href="index.html">Accueil</a>
+      <a href="../index.html">Accueil</a>
       <a href="about.html" class="active">À propos</a>
       <a href="menu.html">Menu</a>
       <a href="order.html">Commander</a>
@@ -80,21 +76,25 @@
     </nav>
   </header>
 
-  <!-- Main Content -->
-  <main class="container">
+  <main class="container about-images-container">
     <h1>À propos de Cakes Dat Rock</h1>
-    <p>Cakes Dat Rock est votre boulangerie de référence pour des gâteaux frais, pâtisseries et amuse-gueules comme samoussas, rouleaux de printemps, puff-puff et pâtés à la viande. Nous offrons également une formation en personne à Abuja et bientôt au Canada pour les boulangers en herbe !</p>
-    <p>Notre boulangerie est située à Abuja, au Nigéria, et nous sommes ravis d’ouvrir bientôt un magasin à Moncton ou Dieppe, au Canada. Nous sommes fiers de la qualité, de la fraîcheur et des saveurs traditionnelles nigérianes — toujours faits maison avec amour.</p>
+    <p>Bienvenue chez Cakes Dat Rock ! Nous sommes spécialisés dans les pâtisseries nigérianes et les amuse-gueules qui apportent de la joie à chaque occasion.</p>
+
+    <div class="floating-images">
+      <img src="../images/bakery-left.jpg" alt="Intérieur de la boulangerie" class="float-img left" />
+      <img src="../images/bakery-right.jpg" alt="Gâteaux fraîchement cuits" class="float-img right" />
+    </div>
+
+    <p>Nous offrons des programmes de formation, la commande en ligne, et plus encore. Contactez-nous pour découvrir comment nous pouvons vous servir !</p>
   </main>
 
-  <!-- Emojis decoration -->
   <div class="footer-emojis">
     🎂🧁🍩🥟🌯🍰🎉✨🎈
   </div>
 
-  <!-- Footer -->
   <footer class="container">
     <p>&copy; 2025 Cakes Dat Rock</p>
   </footer>
+
 </body>
 </html>
