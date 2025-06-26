@@ -5,38 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Training - Cakes Dat Rock</title>
   <link rel="stylesheet" href="style.css" />
-  <script>
-    function detectDevice() {
-      const isMobile = /iPhone|Android|iPad|iPod/i.test(navigator.userAgent);
-      if (!localStorage.getItem("deviceChoice")) {
-        if (!isMobile && !navigator.userAgent.includes("Windows") && !navigator.userAgent.includes("Mac")) {
-          // Unknown device
-          document.getElementById("device-popup").classList.remove("hidden");
-        } else {
-          localStorage.setItem("deviceChoice", isMobile ? "phone" : "computer");
-        }
-      }
-    }
-
-    function selectDevice(type) {
-      localStorage.setItem("deviceChoice", type);
-      document.getElementById("device-popup").classList.add("hidden");
-    }
-
-    function hoverReact(el) {
-      if (!/Mobi|Android/i.test(navigator.userAgent)) {
-        el.querySelector('.emoji').style.transform = "scale(1.3)";
-        setTimeout(() => {
-          el.querySelector('.emoji').style.transform = "scale(1)";
-        }, 300);
-      }
-    }
-
-    detectDevice();
-  </script>
 </head>
-<body>
+<script>
+  function detectDevice() {
+    const isMobile = /iPhone|Android|iPad|iPod/i.test(navigator.userAgent);
+    if (!localStorage.getItem("deviceChoice")) {
+      if (!isMobile && !navigator.userAgent.includes("Windows") && !navigator.userAgent.includes("Mac")) {
+        document.getElementById("device-popup").classList.remove("hidden");
+      } else {
+        localStorage.setItem("deviceChoice", isMobile ? "phone" : "computer");
+      }
+    }
+  }
+  function selectDevice(type) {
+    localStorage.setItem("deviceChoice", type);
+    document.getElementById("device-popup").classList.add("hidden");
+  }
+  function hoverReact(el) {
+    if (!/Mobi|Android/i.test(navigator.userAgent)) {
+      el.querySelector('.emoji').style.transform = "scale(1.3)";
+      setTimeout(() => {
+        el.querySelector('.emoji').style.transform = "scale(1)";
+      }, 300);
+    }
+  }
+  detectDevice();
+</script>
 
+<body>
   <div id="device-popup" class="popup hidden">
     <div class="popup-box">
       <h2>Are you on a phone or computer?</h2>
@@ -51,6 +47,7 @@
     </div>
   </div>
 
+  <!-- Bubbles -->
   <div class="bubble" style="width: 50px; height: 50px; left: 10%; background: #ff66b2; animation-duration: 20s; animation-delay: 0s;"></div>
   <div class="bubble" style="width: 30px; height: 30px; left: 25%; background: #66ffb3; animation-duration: 18s; animation-delay: 5s;"></div>
   <div class="bubble" style="width: 40px; height: 40px; left: 40%; background: #ffb366; animation-duration: 22s; animation-delay: 3s;"></div>
@@ -79,15 +76,17 @@
   <main class="container">
     <h1>Training Programs</h1>
     <p>We offer in-person baking and small chops training in Abuja and Canada. Contact us to learn more or register!</p>
+
+    <div class="floating-images">
+      <img src="images/students.jpg" alt="Our students during training" class="float-img left" />
+    </div>
+    <p style="font-style: italic; color: #b3006b; text-align: center; margin-top: 0.5rem;">Some of our students</p>
   </main>
 
-  <div class="footer-emojis">
-    🎂🧁🍩🥟🌯🍰🎉✨🎈
-  </div>
+  <div class="footer-emojis">🎂🧁🍩🥟🌯🍰🎉✨🎈</div>
 
   <footer class="container">
     <p>&copy; 2025 Cakes Dat Rock</p>
   </footer>
 </body>
 </html>
-
