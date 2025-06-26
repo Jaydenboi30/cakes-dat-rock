@@ -5,67 +5,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Formation - Cakes Dat Rock</title>
   <link rel="stylesheet" href="../style.css" />
-</head>
   <script>
-  function detectDevice() {
-    const isMobile = /iPhone|Android|iPad|iPod/i.test(navigator.userAgent);
-    if (!localStorage.getItem("deviceChoice")) {
-      if (!isMobile && !navigator.userAgent.includes("Windows") && !navigator.userAgent.includes("Mac")) {
-        // Unknown device
-        document.getElementById("device-popup").classList.remove("hidden");
-      } else {
-        localStorage.setItem("deviceChoice", isMobile ? "phone" : "computer");
+    function detectDevice() {
+      const isMobile = /iPhone|Android|iPad|iPod/i.test(navigator.userAgent);
+      if (!localStorage.getItem("deviceChoice")) {
+        if (!isMobile && !navigator.userAgent.includes("Windows") && !navigator.userAgent.includes("Mac")) {
+          // Appareil inconnu
+          document.getElementById("device-popup").classList.remove("hidden");
+        } else {
+          localStorage.setItem("deviceChoice", isMobile ? "phone" : "computer");
+        }
       }
     }
-  }
 
-  function selectDevice(type) {
-    localStorage.setItem("deviceChoice", type);
-    document.getElementById("device-popup").classList.add("hidden");
-  }
-
-  function hoverReact(el) {
-    if (!/Mobi|Android/i.test(navigator.userAgent)) {
-      el.querySelector('.emoji').style.transform = "scale(1.3)";
-      setTimeout(() => {
-        el.querySelector('.emoji').style.transform = "scale(1)";
-      }, 300);
+    function selectDevice(type) {
+      localStorage.setItem("deviceChoice", type);
+      document.getElementById("device-popup").classList.add("hidden");
     }
-  }
 
-  detectDevice();
-</script>
+    function hoverReact(el) {
+      if (!/Mobi|Android/i.test(navigator.userAgent)) {
+        el.querySelector('.emoji').style.transform = "scale(1.3)";
+        setTimeout(() => {
+          el.querySelector('.emoji').style.transform = "scale(1)";
+        }, 300);
+      }
+    }
 
+    detectDevice();
+  </script>
+</head>
 <body>
 
   <div id="device-popup" class="popup hidden">
-  <div class="popup-box">
-    <h2>Are you on a phone or computer?</h2>
-    <div class="popup-options">
-      <div class="popup-option" onclick="selectDevice('phone')" onmouseover="hoverReact(this)">
-        <span class="emoji">📱</span><br>Phone
-      </div>
-      <div class="popup-option" onclick="selectDevice('computer')" onmouseover="hoverReact(this)">
-        <span class="emoji">🖥️</span><br>Computer
+    <div class="popup-box">
+      <h2>Êtes-vous sur un téléphone ou un ordinateur ?</h2>
+      <div class="popup-options">
+        <div class="popup-option" onclick="selectDevice('phone')" onmouseover="hoverReact(this)">
+          <span class="emoji">📱</span><br>Téléphone
+        </div>
+        <div class="popup-option" onclick="selectDevice('computer')" onmouseover="hoverReact(this)">
+          <span class="emoji">🖥️</span><br>Ordinateur
+        </div>
       </div>
     </div>
   </div>
-</div>
-
 
   <div class="bubble" style="width: 50px; height: 50px; left: 10%; background: #ff66b2; animation-duration: 20s; animation-delay: 0s;"></div>
-<div class="bubble" style="width: 30px; height: 30px; left: 25%; background: #66ffb3; animation-duration: 18s; animation-delay: 5s;"></div>
-<div class="bubble" style="width: 40px; height: 40px; left: 40%; background: #ffb366; animation-duration: 22s; animation-delay: 3s;"></div>
-<div class="bubble" style="width: 35px; height: 35px; left: 60%; background: #66b3ff; animation-duration: 25s; animation-delay: 7s;"></div>
-<div class="bubble" style="width: 25px; height: 25px; left: 75%; background: #b366ff; animation-duration: 19s; animation-delay: 2s;"></div>
-<div class="bubble" style="width: 45px; height: 45px; left: 85%; background: #ff6699; animation-duration: 21s; animation-delay: 6s;"></div>
-<div class="logo-container">
-  <div class="logo-container">
-  <a href="index.html">
-    <img src="logo.png" alt="Cakes Dat Rock Logo" class="logo" />
-  </a>
-</div>
+  <div class="bubble" style="width: 30px; height: 30px; left: 25%; background: #66ffb3; animation-duration: 18s; animation-delay: 5s;"></div>
+  <div class="bubble" style="width: 40px; height: 40px; left: 40%; background: #ffb366; animation-duration: 22s; animation-delay: 3s;"></div>
+  <div class="bubble" style="width: 35px; height: 35px; left: 60%; background: #66b3ff; animation-duration: 25s; animation-delay: 7s;"></div>
+  <div class="bubble" style="width: 25px; height: 25px; left: 75%; background: #b366ff; animation-duration: 19s; animation-delay: 2s;"></div>
+  <div class="bubble" style="width: 45px; height: 45px; left: 85%; background: #ff6699; animation-duration: 21s; animation-delay: 6s;"></div>
 
+  <div class="logo-container">
+    <a href="index.html">
+      <img src="logo.png" alt="Logo Cakes Dat Rock" class="logo" />
+    </a>
+  </div>
 
   <header>
     <nav class="container">
@@ -83,12 +80,14 @@
     <h1>Programmes de formation</h1>
     <p>Nous offrons une formation en personne en pâtisserie et petits fours à Abuja et au Canada. Contactez-nous pour en savoir plus ou vous inscrire !</p>
   </main>
+
   <div class="footer-emojis">
-  🎂🧁🍩🥟🌯🍰🎉✨🎈
-</div>
+    🎂🧁🍩🥟🌯🍰🎉✨🎈
+  </div>
 
   <footer class="container">
     <p>&copy; 2025 Cakes Dat Rock</p>
   </footer>
 </body>
 </html>
+
