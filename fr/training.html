@@ -6,55 +6,7 @@
   <title>Formation - Cakes Dat Rock</title>
   <link rel="stylesheet" href="../style.css" />
 </head>
-<script>
-  function detectDevice() {
-    const isMobile = /iPhone|Android|iPad|iPod/i.test(navigator.userAgent);
-    if (!localStorage.getItem("deviceChoice")) {
-      if (!isMobile && !navigator.userAgent.includes("Windows") && !navigator.userAgent.includes("Mac")) {
-        document.getElementById("device-popup").classList.remove("hidden");
-      } else {
-        localStorage.setItem("deviceChoice", isMobile ? "phone" : "computer");
-      }
-    }
-  }
-  function selectDevice(type) {
-    localStorage.setItem("deviceChoice", type);
-    document.getElementById("device-popup").classList.add("hidden");
-  }
-  function hoverReact(el) {
-    if (!/Mobi|Android/i.test(navigator.userAgent)) {
-      el.querySelector('.emoji').style.transform = "scale(1.3)";
-      setTimeout(() => {
-        el.querySelector('.emoji').style.transform = "scale(1)";
-      }, 300);
-    }
-  }
-  detectDevice();
-</script>
-
 <body>
-  <div id="device-popup" class="popup hidden">
-    <div class="popup-box">
-      <h2>Êtes-vous sur un téléphone ou un ordinateur ?</h2>
-      <div class="popup-options">
-        <div class="popup-option" onclick="selectDevice('phone')" onmouseover="hoverReact(this)">
-          <span class="emoji">📱</span><br>Téléphone
-        </div>
-        <div class="popup-option" onclick="selectDevice('computer')" onmouseover="hoverReact(this)">
-          <span class="emoji">🖥️</span><br>Ordinateur
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Bubbles -->
-  <div class="bubble" style="width: 50px; height: 50px; left: 10%; background: #ff66b2; animation-duration: 20s; animation-delay: 0s;"></div>
-  <div class="bubble" style="width: 30px; height: 30px; left: 25%; background: #66ffb3; animation-duration: 18s; animation-delay: 5s;"></div>
-  <div class="bubble" style="width: 40px; height: 40px; left: 40%; background: #ffb366; animation-duration: 22s; animation-delay: 3s;"></div>
-  <div class="bubble" style="width: 35px; height: 35px; left: 60%; background: #66b3ff; animation-duration: 25s; animation-delay: 7s;"></div>
-  <div class="bubble" style="width: 25px; height: 25px; left: 75%; background: #b366ff; animation-duration: 19s; animation-delay: 2s;"></div>
-  <div class="bubble" style="width: 45px; height: 45px; left: 85%; background: #ff6699; animation-duration: 21s; animation-delay: 6s;"></div>
-
   <div class="logo-container">
     <a href="index.html">
       <img src="../logo.png" alt="Logo Cakes Dat Rock" class="logo" />
@@ -75,12 +27,17 @@
 
   <main class="container">
     <h1>Programmes de formation</h1>
-    <p>Nous offrons une formation en personne en pâtisserie et petits fours à Abuja et au Canada. Contactez-nous pour en savoir plus ou vous inscrire !</p>
+    <p>Nous offrons une formation en personne en pâtisserie et petits fours à Abuja et au Canada. Contactez-nous pour en savoir plus ou vous inscrire !</p>
 
-    <div class="floating-images">
-      <img src="../images/students.jpg" alt="Nos étudiants en formation" class="float-img left" />
+    <div class="training-photo-section">
+      <h2>Quelques-uns de nos élèves</h2>
+      <img src="../students.jpg" alt="Nos élèves" class="student-photo" onclick="openFullscreen(this)" />
     </div>
-    <p style="font-style: italic; color: #b3006b; text-align: center; margin-top: 0.5rem;">Quelques-uns de nos étudiants</p>
+
+    <video class="training-video" autoplay muted loop playsinline>
+      <source src="../icing-cake.mp4" type="video/mp4" />
+      Votre navigateur ne supporte pas la balise vidéo.
+    </video>
   </main>
 
   <div class="footer-emojis">🎂🧁🍩🥟🌯🍰🎉✨🎈</div>
@@ -88,5 +45,22 @@
   <footer class="container">
     <p>&copy; 2025 Cakes Dat Rock</p>
   </footer>
+
+  <div id="imgFullscreen" class="img-fullscreen" onclick="closeFullscreen()">
+    <img id="fullscreenImg" src="" alt="Image élève plein écran" />
+  </div>
+
+  <script>
+    function openFullscreen(el) {
+      const fullscreen = document.getElementById("imgFullscreen");
+      const img = document.getElementById("fullscreenImg");
+      img.src = el.src;
+      fullscreen.classList.add("active");
+    }
+
+    function closeFullscreen() {
+      document.getElementById("imgFullscreen").classList.remove("active");
+    }
+  </script>
 </body>
 </html>
