@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
   <div class="logo-container">
     <a href="index.html">
       <img src="logo.png" alt="Cakes Dat Rock Logo" class="logo" />
@@ -29,38 +30,24 @@
     <h1>Training Programs</h1>
     <p>We offer in-person baking and small chops training in Abuja and Canada. Contact us to learn more or register!</p>
 
-    <div class="training-photo-section">
-      <h2>Some of our students🍦</h2>
-      <img src="students.jpg" alt="Our students" class="student-photo" onclick="openFullscreen(this)" />
+    <div class="floating-images">
+      <img src="students1.jpg" alt="Students baking 1" class="float-img left" />
+      <img src="students2.jpg" alt="Students baking 2" class="float-img right" />
     </div>
+    <p style="text-align:center; font-style: italic; margin-top: -15px;">Some of our students</p>
 
-    <video class="training-video" autoplay muted loop playsinline>
-      <source src="icing-cake.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
+    <div class="floating-video">
+      <video class="float-video" src="icing-cake.mp4" autoplay muted loop playsinline></video>
+    </div>
   </main>
 
-  <div class="footer-emojis">🎂🧁🍩🥟🌯🍰🎉✨🎈</div>
+  <div class="footer-emojis">
+    🎂🧁🍩🥟🌯🍰🎉✨🎈
+  </div>
 
   <footer class="container">
     <p>&copy; 2025 Cakes Dat Rock</p>
   </footer>
 
-  <div id="imgFullscreen" class="img-fullscreen" onclick="closeFullscreen()">
-    <img id="fullscreenImg" src="" alt="Fullscreen Student Photo" />
-  </div>
-
-  <script>
-    function openFullscreen(el) {
-      const fullscreen = document.getElementById("imgFullscreen");
-      const img = document.getElementById("fullscreenImg");
-      img.src = el.src;
-      fullscreen.classList.add("active");
-    }
-
-    function closeFullscreen() {
-      document.getElementById("imgFullscreen").classList.remove("active");
-    }
-  </script>
 </body>
 </html>
