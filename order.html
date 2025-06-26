@@ -10,7 +10,6 @@
       const isMobile = /iPhone|Android|iPad|iPod/i.test(navigator.userAgent);
       if (!localStorage.getItem("deviceChoice")) {
         if (!isMobile && !navigator.userAgent.includes("Windows") && !navigator.userAgent.includes("Mac")) {
-          // Unknown device
           document.getElementById("device-popup").classList.remove("hidden");
         } else {
           localStorage.setItem("deviceChoice", isMobile ? "phone" : "computer");
@@ -37,6 +36,7 @@
 </head>
 <body>
 
+  <!-- Popup -->
   <div id="device-popup" class="popup hidden">
     <div class="popup-box">
       <h2>Are you on a phone or computer?</h2>
@@ -51,14 +51,14 @@
     </div>
   </div>
 
-
-
+  <!-- Logo -->
   <div class="logo-container">
     <a href="index.html">
       <img src="logo.png" alt="Cakes Dat Rock Logo" class="logo" />
     </a>
   </div>
 
+  <!-- Header -->
   <header>
     <nav class="container">
       <a href="index.html">Home</a>
@@ -71,6 +71,7 @@
     </nav>
   </header>
 
+  <!-- Main Content -->
   <main class="container">
     <h1>Place an Order</h1>
     <p>You can order online, via WhatsApp, social media, or by phone:</p>
@@ -89,15 +90,38 @@
         </a>
       </li>
     </ul>
+
+    <!-- Product Grid -->
+    <div class="order-grid">
+      <div class="order-item">
+        <img src="cake1.jpg" alt="Strawberry Cake">
+        <p class="caption">Strawberry Cake</p>
+      </div>
+      <div class="order-item">
+        <img src="cake2.jpg" alt="Chocolate Cupcake">
+        <p class="caption">Chocolate Cupcake</p>
+      </div>
+      <div class="order-item">
+        <img src="cake3.jpg" alt="Puff Puff">
+        <p class="caption">Puff Puff</p>
+      </div>
+      <div class="order-item">
+        <img src="cake4.jpg" alt="Spring Rolls">
+        <p class="caption">Spring Rolls</p>
+      </div>
+      <!-- Add more items as needed -->
+    </div>
   </main>
 
+  <!-- Emojis -->
   <div class="footer-emojis">
     🎂🧁🍩🥟🌯🍰🎉✨🎈
   </div>
 
+  <!-- Footer -->
   <footer class="container">
     <p>&copy; 2025 Cakes Dat Rock</p>
   </footer>
+
 </body>
 </html>
-
