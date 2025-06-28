@@ -6,7 +6,52 @@
   <title>Formation - Cakes Dat Rock</title>
   <link rel="stylesheet" href="../style.css" />
 </head>
+
+<script>
+  function detectDevice() {
+    const isMobile = /iPhone|Android|iPad|iPod/i.test(navigator.userAgent);
+    if (!localStorage.getItem("deviceChoice")) {
+      if (!isMobile && !navigator.userAgent.includes("Windows") && !navigator.userAgent.includes("Mac")) {
+        document.getElementById("device-popup").classList.remove("hidden");
+      } else {
+        localStorage.setItem("deviceChoice", isMobile ? "phone" : "computer");
+      }
+    }
+  }
+
+  function selectDevice(type) {
+    localStorage.setItem("deviceChoice", type);
+    document.getElementById("device-popup").classList.add("hidden");
+  }
+
+  function hoverReact(el) {
+    if (!/Mobi|Android/i.test(navigator.userAgent)) {
+      el.querySelector('.emoji').style.transform = "scale(1.3)";
+      setTimeout(() => {
+        el.querySelector('.emoji').style.transform = "scale(1)";
+      }, 300);
+    }
+  }
+
+  detectDevice();
+</script>
+
 <body>
+
+  <!-- Popup de sélection d'appareil -->
+  <div id="device-popup" class="popup hidden">
+    <div class="popup-box">
+      <h2>Utilisez-vous un téléphone ou un ordinateur ?</h2>
+      <div class="popup-options">
+        <div class="popup-option" onclick="selectDevice('phone')" onmouseover="hoverReact(this)">
+          <span class="emoji">📱</span><br>Téléphone
+        </div>
+        <div class="popup-option" onclick="selectDevice('computer')" onmouseover="hoverReact(this)">
+          <span class="emoji">🖥️</span><br>Ordinateur
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div class="logo-container">
     <a href="../index.html">
@@ -46,3 +91,4 @@
 
 </body>
 </html>
+
