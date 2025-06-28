@@ -231,7 +231,7 @@ footer {
   50% { transform: translateY(-10px); }
 }
 
-/* Floating Image (single training image) */
+/* Floating Image (training page single image) */
 .floating-image-single {
   display: flex;
   flex-direction: column;
@@ -269,7 +269,49 @@ footer {
   margin-left: 6px;
 }
 
-/* Order page product grid */
+/* About Page Floating Media */
+.floating-media {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 2rem 0 3rem;
+  flex-wrap: wrap;
+}
+
+.float-img {
+  width: 48%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(255, 102, 178, 0.25);
+  animation: floatUpDown 6s ease-in-out infinite;
+  object-fit: cover;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.float-img:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(255, 102, 178, 0.5);
+}
+
+.float-video {
+  width: 100%;
+  max-width: 640px;
+  border-radius: 20px;
+  box-shadow: 0 12px 28px rgba(255, 179, 102, 0.4);
+  animation: floatUpDown 7s ease-in-out infinite;
+  object-fit: cover;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  outline: none;
+}
+
+.float-video:hover {
+  transform: scale(1.03);
+  box-shadow: 0 18px 40px rgba(255, 179, 102, 0.6);
+}
+
+/* Order Page Grid */
 .order-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -307,7 +349,8 @@ footer {
   font-size: 1rem;
 }
 
-@media (max-width: 600px) {
+/* Responsive Adjustments */
+@media (max-width: 768px) {
   header {
     flex-direction: column;
     align-items: flex-start;
@@ -358,5 +401,20 @@ footer {
 
   .order-item img {
     max-height: 180px;
+  }
+
+  .floating-media {
+    flex-direction: column;
+  }
+
+  .float-img {
+    width: 100%;
+    max-height: 250px;
+  }
+
+  .float-video {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
   }
 }
