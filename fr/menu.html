@@ -5,6 +5,73 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Menu - Cakes Dat Rock</title>
   <link rel="stylesheet" href="../style.css" />
+  <style>
+    .menu-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+      margin: 40px 0;
+    }
+
+    .menu-buttons button {
+      padding: 12px 28px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 30px;
+      background: #ff66b2;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      box-shadow: 0 6px 14px rgba(255, 102, 178, 0.5);
+    }
+
+    .menu-buttons button:hover {
+      transform: scale(1.05);
+    }
+
+    .gallery-popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(8px);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .gallery-box {
+      background: #fff0f7;
+      padding: 20px;
+      border-radius: 20px;
+      max-width: 90%;
+      max-height: 90%;
+      overflow: auto;
+      position: relative;
+      text-align: center;
+    }
+
+    .gallery-box img {
+      max-width: 200px;
+      border-radius: 10px;
+      margin: 10px;
+      box-shadow: 0 4px 14px rgba(255, 102, 178, 0.3);
+    }
+
+    .close-popup {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 1.8rem;
+      color: #ff66b2;
+      cursor: pointer;
+    }
+  </style>
   <script>
     function detectDevice() {
       const isMobile = /iPhone|Android|iPad|iPod/i.test(navigator.userAgent);
@@ -33,6 +100,25 @@
       }
     }
 
+    function openGallery(category) {
+      const popup = document.getElementById("gallery-popup");
+      const container = document.getElementById("gallery-images");
+      container.innerHTML = "";
+
+      for (let i = 1; i <= 5; i++) {
+        const img = document.createElement("img");
+        img.src = `../images/${category}${i}.jpg`;
+        img.alt = `${category} ${i}`;
+        container.appendChild(img);
+      }
+
+      popup.style.display = "flex";
+    }
+
+    function closeGallery() {
+      document.getElementById("gallery-popup").style.display = "none";
+    }
+
     document.addEventListener("DOMContentLoaded", detectDevice);
   </script>
 </head>
@@ -42,19 +128,17 @@
   <!-- Device Popup -->
   <div id="device-popup" class="popup hidden">
     <div class="popup-box">
-      <h2>Are you on a phone or computer?</h2>
+      <h2>Êtes-vous sur un téléphone ou un ordinateur ?</h2>
       <div class="popup-options">
         <div class="popup-option" onclick="selectDevice('phone')" onmouseover="hoverReact(this)">
-          <span class="emoji">📱</span><br>Phone
+          <span class="emoji">📱</span><br>Téléphone
         </div>
         <div class="popup-option" onclick="selectDevice('computer')" onmouseover="hoverReact(this)">
-          <span class="emoji">🖥️</span><br>Computer
+          <span class="emoji">🖥️</span><br>Ordinateur
         </div>
       </div>
     </div>
   </div>
-
-  
 
   <!-- Logo -->
   <div class="logo-container">
@@ -79,13 +163,21 @@
   <!-- Main Menu Content -->
   <main class="container">
     <h1>Notre Menu</h1>
-    <ul>
-      <li><strong>Gâteaux</strong> – Gâteaux d'anniversaire, de mariage et personnalisés</li>
-      <li><strong>Samoussas & Rouleaux de printemps</strong></li>
-      <li><strong>Puff-Puff & Pâtés à la viande</strong></li>
-      <li><strong>Commandes spéciales & plateaux de fête</strong></li>
-    </ul>
+    <div class="menu-buttons">
+      <button onclick="openGallery('cakes')">🎂 Gâteaux</button>
+      <button onclick="openGallery('springrolls')">🥟 Samoussas & Rouleaux de printemps</button>
+      <button onclick="openGallery('meatpies')">🥧 Puff-Puff & Pâtés à la viande</button>
+      <button onclick="openGallery('party')">🍱 Commandes spéciales & plateaux de fête</button>
+    </div>
   </main>
+
+  <!-- Gallery Popup -->
+  <div id="gallery-popup" class="gallery-popup">
+    <div class="gallery-box">
+      <span class="close-popup" onclick="closeGallery()">×</span>
+      <div id="gallery-images"></div>
+    </div>
+  </div>
 
   <!-- Footer Emojis -->
   <div class="footer-emojis">🎂🧁🍩🥟🌯🍰🎉✨🎈</div>
@@ -97,4 +189,5 @@
 
 </body>
 </html>
+
 
